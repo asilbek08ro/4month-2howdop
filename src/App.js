@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Form from "./Form";
+import Table from "./Table";
+import './style.css';
+
+// import poloImage from './polo.jpeg';
+ 
+
 
 function App() {
+ const[data, setData] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form data={data} setData={setData} />
+      <Table data={data}/>
+      {/* <img src={poloImage} alt="" style={{width:'100%'}}/> */}
     </div>
   );
 }
